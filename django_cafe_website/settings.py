@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-knkh5h8h9fe7_aarmit)58f^l0cs%_mnx0toimkh!&*u-5&)g7'
-
+# SECRET_KEY = 'django-insecure-knkh5h8h9fe7_aarmit)58f^l0cs%_mnx0toimkh!&*u-5&)g7'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
@@ -33,7 +33,7 @@ DB_HOST = os.environ.get('DB_HOST')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cafeweb124.herokuapp.com']
 
 
 # Application definition
