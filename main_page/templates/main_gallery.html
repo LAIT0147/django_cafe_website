@@ -1,0 +1,28 @@
+
+
+<section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="section-title">
+          <h2>Some photos from <span>Our Restaurant</span></h2>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row no-gutters">
+        {% for item in gallery %}
+            {% if forloop.counter <= 8 %}
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                      <a href="{{ item.photo.url }}" class="gallery-lightbox">
+                        <img src={{ item.photo_thumbnail.url }} alt="" class="img-fluid">
+                      </a>
+                    </div>
+                  </div>
+            {% else %}
+                {{ break }}
+            {% endif %}
+        {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
